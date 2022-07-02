@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content = "width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Retirement Fund Strategy | Ryan Alvita</title>
+    
+    <link rel="shortcut icon" href="assets/ra_logo_white.png" type="image/png" sizes="24x24">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ra_logo_white.png">
+    <link rel="icon" type="image/png" href="assets/ra_logo_white.png" sizes="24x24">
+    <meta name="msapplication-TileImage" content="assets/ra_logo.png">
+    <meta name="msapplication-TileColor" content="#FFD23E">
+
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="assets/slick/slick.css">
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <header class="module-header">
+        <div class="header-container">
+            <h1><a href="index.html"><img src="assets/ra_logo.png" width="37.5" height="37.5"/></a></h1>
+        </div>
+    </header>
+    <section id="module-hero">
+        <div class="hero-box">
+            <div class="hero-image">
+                <i class="fas fa-couch"></i>
+            </div>
+            <div class="hero-title">
+                <p>Retirement Fund Strategy</p>
+            </div>
+            <div class="hero-text">
+                <p>Use this calculator to determine how much you need to save now to live comfortably in the retirement years ahead using the 4% rule.</p>
+            </div>
+        </div>
+    </section>
+    <section id="module">
+        <h2>Your expenses today</h2>
+        <ul class="the-story">
+            <li>
+                <label>Expenses per month</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            Amount of money that you spent per month.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <p>EUR</p>
+                    <input type="text" pattern="\d*" class="custom-form-control price mask-number count-a">
+                </div>
+            </li>
+            <li class="step-2 hide">
+                <label>Expenses per year</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            Amount of money that you spent per year.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <p>
+                        <b class="count-b"></b>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div class="divider-title step-2 hide">
+            <h2>Your expenses in your retirement period</h2>
+        </div>
+        <ul class="the-story step-2 hide">
+            <li class="step-2 hide">
+                <label>How old are you?</label>
+                <div class="custom-input-group">
+                    <input type="text" pattern="\d*" class="custom-form-control year count-c">
+                    <p>years old</p>
+                </div>
+            </li>
+            <li class="step-3 hide">
+                <label>What age do you want to retire?</label>
+                <div class="custom-input-group">
+                    <input type="text" pattern="\d*" class="custom-form-control year count-d">
+                    <p>years old</p>
+                    <small class="pension-age error hide">Your retirement age should be larger than your age now.</small>
+                </div>
+            </li>
+            <li class="step-4 hide">
+                <label>Yearly inflation rate</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            Inflation is the rate at which the value of a currency is falling and, consequently, the general level of prices for goods and services is rising.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <input type="text" pattern="\d*" class="custom-form-control percentage count-e" value="4">
+                    <p>%</p>
+                </div>
+            </li>
+            <li class="step-4 hide">
+                <label>Expenses per year after retierement age</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            Amount of money that you spent per year after retirement age due to inflation.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <p>
+                        <b class="count-f"></b>
+                    </p>
+                </div>
+            </li>
+            <li class="step-4 hide">
+                <label>Required retirement fund based on 4% rule</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            The 4% Rule is a practical rule of thumb that may be used by retirees to decide how much they should withdraw from their retirement funds each year.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <p>
+                        <b class="count-j"></b>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div class="divider-title step-5 hide">
+            <h2>How much you should invest?</h2>
+        </div>
+        <ul class="the-story step-5 hide">
+            <li class="step-5 hide">
+                <label>Current retirement savings</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            Total amount that you currently have saved toward your retirement.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <p>EUR</p>
+                    <input type="text" pattern="\d*" class="custom-form-control mask-number price count-i">
+                </div>
+            </li>
+            <li class="step-6 hide">
+                <label>Monthly investment plan</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            Amount of money that you want to invest per month for retirement fund.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <p>EUR</p>
+                    <input type="text" pattern="\d*" class="custom-form-control price mask-number count-k">
+                </div>
+            </li>
+            <li class="step-7 hide">
+                <label>Investment returns</label>
+                <div class="tooltip tooltip-inline">
+                    <i class="fas fa-circle-question"></i>
+                    <div class="tooltip-container">
+                        <p>
+                            This is the annual rate of return you expect from your investments.
+                        </p>
+                    </div>
+                </div>
+                <div class="custom-input-group">
+                    <input type="text" pattern="\d*" class="custom-form-control percentage count-h">
+                    <p>%</p>
+                </div>
+            </li>
+            <li class="step-8 hide">
+                <label>You'll retire in:</label>
+                <div class="custom-input-group">
+                    <p>
+                        <b class="count-g"></b>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div class="form-end step-8 hide">
+            <div class="form-end-label">
+                <h3>Let's see your retirement fund investment strategy!</h3>
+            </div>
+            <div class="form-end-cta">
+                <button class="btn btn-red btn-icon" id="start-count">
+                    <img src="assets/arrow.svg">
+                </button>
+            </div>
+        </div>
+</section>
+
+        <footer>
+            <div class="social">
+                <ul class="social-list">
+                    <li>
+                        <a href="mailto:ryanalvita@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ryanalvita">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ryanalvita">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copyright">
+                <span>
+                    &copy; 2022
+                    Ryan Alvita
+                </span>
+                <span>All Right Reserved.</span>
+            </div>
+        </footer>
+    </div>
+
+<div class="results-container">
+    <div class="results-box">
+        <div class="results-slider">
+            <div class="result-item slide-1">
+                <div class="results-hero">
+                    <h5 id="results-text" class="mt-3"></h5>
+                    <a id="results-img"></a>
+                </div>
+                <div class="result-card">
+                    <div class="result-card-item">
+                        <div class="result-card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="result-card-title">
+                            <h3>Required retirement fund based on 4% rule</h3>
+                        </div>
+                        <div class="result-card-value">
+                            <h3 class="count-j"></h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="outside-title">Your investment strategy</h3>       
+                <div class="result-card">
+                    <div class="result-card-item">
+                        <div class="result-card-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="result-card-title">
+                            <h3>Current retirement savings</h3>
+                        </div>
+                        <div class="result-card-value">
+                            <h3 class="count-i"></h3>
+                        </div>
+                    </div>
+                    <div class="result-card-item">
+                        <div class="result-card-icon">
+                            <i class="fas fa-money-bill-wave-alt"></i>
+                        </div>
+                        <div class="result-card-title">
+                            <h3>Monthly investment plan</h3>
+                        </div>
+                        <div class="result-card-value">
+                            <h3 class="count-k"></h3>
+                        </div>
+                    </div>
+                    <div class="result-card-item">
+                        <div class="result-card-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="result-card-title">
+                            <h3>Investment returns</h3>
+                        </div>
+                        <div class="result-card-value">
+                            <h3 class="count-h"></h3>
+                        </div>
+                    </div>
+                    <div class="result-card-item">
+                        <div class="result-card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="result-card-title">
+                            <h3>Investment period</h3>
+                        </div>
+                        <div class="result-card-value">
+                            <h3 class="count-g"></h3>
+                        </div>
+                    </div>
+                    <div class="result-card-item">
+                        <div class="result-card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="result-card-title">
+                            <h3>Investment results</h3>
+                        </div>
+                        <div class="result-card-value">
+                            <h3 class="count-fv"></h3>
+                            <h3 class="neg-inv"></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-alert">
+                    <p>Swipe to see investment strategy recommendation</p>
+                    <img src="assets/twirly.png" alt="">
+                </div>
+
+            </div>
+  
+            <div class="result-item slide-2">             
+                <div class="state-container state-one">
+                    <div class="result-card">
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Required retirement fund based on 4% rule</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="count-j"></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Current retirement savings</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="count-i"></h3>
+                            </div>
+                        </div>
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-money-bill-wave-alt"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Monthly investment plan</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="count-k"></h3>
+                            </div>
+                        </div>
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Investment returns</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="count-h"></h3>
+                            </div>
+                        </div>
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Investment period</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="count-g"></h3>
+                            </div>
+                        </div>
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Investment results</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="count-fv"></h3>
+                                <h3 class="neg-inv"></h3>
+                            </div>
+                        </div>
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-list"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Investment instrument choice</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="varVariant"></h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="outside-title">Investment timeline</h3>
+                    <div class="result-card">
+                        <ul class="the-timeline">
+                            <li>
+                                <b>Year 1</b>
+                                <p>Current retirement savings: <span class="count-i"></span></p>
+                            </li>
+                            <li>
+                                <b>Year <span class="varYmin"></span></b>
+                                <p>Choose investment instruments that has lower risk, e.g. Bank Deposits, Bonds</p>
+                            </li>
+                            <li>
+                                <b>Year <span class="varY"></span></b>
+                                <p>Investment results: <span class="varFV"></span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="state-container state-two active">
+                    <h3 class="outside-title">Choose investment strategy adjustment</h3>
+                    <div class="pill-menu">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" class="pill-item nominal-pill active" data-target=".rec-add-nominal">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Investment amount</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="pill-item year-pill" data-target=".rec-add-year">
+                                    <i class="far fa-clock"></i>
+                                    <span>Investment period</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="pill-item return-pill" data-target=".rec-add-return">
+                                    <i class="fas fa-percentage"></i>
+                                    <span>Investment returns</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-card-item">
+                            <div class="result-card-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="result-card-title">
+                                <h3>Required retirement fund based on 4% rule</h3>
+                            </div>
+                            <div class="result-card-value">
+                                <h3 class="count-j"></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rec-container">                     
+                        <div class="rec-item rec-add-nominal active">
+                            <div class="result-card">
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-piggy-bank"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Current retirement savings</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-i"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-money-bill-wave-alt"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Monthly investment plan</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="added-value" id="add-nominal"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-percentage"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment returns</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-h"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment period</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-g"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment results</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="added-value" id="count-nom"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-list-alt"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment instrument choice</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="nomVarVariant"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <h3 class="outside-title">Investment timeline</h3>
+                            <div class="result-card">
+                                <ul class="the-timeline">
+                                    <li class="timeline-startY-nom">
+                                        <b>Year 1</b>
+                                        <p>Current retirement savings: <span class="count-i"></span></p>
+                                    </li>
+                                    <li class="timeline-minY-nom">
+                                        <b>Year</b>
+                                        <p>Choose investment instruments that has lower risk, e.g. Bank Deposits, Bonds</p>
+                                    </li>
+                                    <li class="timeline-endY-nom">
+                                        <b>Year</b>
+                                        <p>Investment results: ±<span class="nomVarFV"></span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+       
+                        <div class="rec-item rec-add-year">
+                            <div class="result-card">
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-piggy-bank"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Current retirement savings</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-i"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-money-bill-wave-alt"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Monthly investment plan</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-k"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-percentage"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment returns</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-h"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment period</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="added-value" id="add-year"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment results</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="added-value" id="count-year"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-list-alt"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment instrument choice</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="yearVarVariant"></h3>
+                                    </div>
+                                </div>
+                            </div>
+   
+                            <h3 class="outside-title">Investment timeline</h3>
+                            <div class="result-card">
+                                <ul class="the-timeline">
+                                    <li class="timeline-startY-year">
+                                        <b>Year 1</b>
+                                        <p>Current retirement savings: <span class="count-iV"></span></p>
+                                    </li>
+                                    <li class="timeline-minY-year">
+                                        <b>Year</b>
+                                        <p>Choose investment instruments that has lower risk, e.g. Bank Deposits, Bonds</p>
+                                    </li>
+                                    <li class="timeline-endY-year">
+                                        <b>Year</b>
+                                        <p>Investment results: ±<span class="yearVarFV"></span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rec-item rec-add-return">
+                            <div class="result-card">
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-piggy-bank"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Current retirement savings</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-i"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-money-bill-wave-alt"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Monthly investment plan</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-k"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-percentage"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment returns</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="added-value" id="add-return"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment period</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="count-g"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment results</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="added-value" id="count-ret"></h3>
+                                    </div>
+                                </div>
+                                <div class="result-card-item">
+                                    <div class="result-card-icon">
+                                        <i class="fas fa-list-alt"></i>
+                                    </div>
+                                    <div class="result-card-title">
+                                        <h3>Investment instrument choice</h3>
+                                    </div>
+                                    <div class="result-card-value">
+                                        <h3 class="retVarVariant"></h3>
+                                    </div>
+                                </div>
+                            </div>
+               
+                            <h3 class="outside-title">Investment timeline</h3>
+                            <div class="result-card">
+                                <ul class="the-timeline">
+                                    <li class="timeline-startY-ret">
+                                        <b>Year 1</b>
+                                        <p>Current retirement savings: <span class="count-i"></span></p>
+                                    </li>
+                                    <li class="timeline-minY-ret">
+                                        <b>Year</b>
+                                        <p>Choose investment instruments that has lower risk, e.g. Bank Deposits, Bonds</p>
+                                    </li>
+                                    <li class="timeline-endY-ret">
+                                        <b>Year</b>
+                                        <p>Investment results: ±<span class="retVarFV"></span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-navigation">
+            <button href="javascript:void(0)" class="btn btn-navigation active" id="prevslide">
+                <i class="fas fa-bullseye"></i>
+                Your Strategy
+            </button>
+            <a href="javascript:void(0)" class="btn btn-navigation" id="slickNext">
+                <i class="fas fa-heart"></i>
+                Strategy Recommendation
+            </a>
+            <a href="javascript:void(0)" class="btn close-result btn-navigation" onclick="closeResults()">
+                <i class="fas fa-times"></i>
+                Close
+            </a>
+        </div>
+    </div>
+</div> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/jquery.masknumber.min.js"></script>
+    <script src="assets/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script src="assets/pages/main.js"></script>
+    <script src="assets/pages/retirement_fund.js"></script>
+</body>
+</html>
