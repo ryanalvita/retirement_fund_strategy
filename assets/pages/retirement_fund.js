@@ -387,7 +387,7 @@ $('#start-count').on("click", function(){
     } else if (futureValue >= j*0.9 && futureValue < j){
     // Almost State
         // Hero Styling
-        $('#results-img').html('<i class="fas circle-arrow-up-right"></i>');
+        $('#results-img').html('<i class="fas fa-arrow-circle-up"></i>');
         $('#results-text').html("Your investment strategy <b class='count-almost'>almost</b> reach your retirement scheme.");
         
         // Hero State
@@ -433,7 +433,7 @@ $('#start-count').on("click", function(){
     // Failed State
 
         // Hero Styling
-        $('#results-img').html('<i class="fas circle-x-mark"></i>');
+        $('#results-img').html('<i class="fas fa-circle-xmark"></i>');
         $('#results-text').html("Your investment strategy <b class='count-fail'>failed</b> to meet your retirement scheme");
             
         // Hero State
